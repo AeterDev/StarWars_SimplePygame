@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "blank-pygame-game"
 version = "0.1.0"
-description = "Blank and extensible pygame starter project."
+description = "Retro pixel-art Star Wars inspired arcade shooter built with pygame."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
   "pygame>=2.6,<3.0",
 ]
@@ -32,6 +32,5 @@ testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py313"
+target-version = "py310"
 src = ["src", "tests"]
-

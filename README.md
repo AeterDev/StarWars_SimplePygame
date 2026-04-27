@@ -1,51 +1,62 @@
-# Blank Pygame Starter
+# Star Wars Pixel Arcade
 
-این پروژه یک اسکلت تمیز و استاندارد برای شروع توسعه بازی با `pygame` است.
+A retro 2D pixel-art space shooter built with `pygame` and the image assets already included in this project.
 
-## پیش‌نیاز
+## Features
 
-- Python 3.11 یا بالاتر (در این سیستم: 3.13)
+- Animated start menu with `EASY`, `MEDIUM`, `HARD`, and `EXIT`
+- Difficulty-based enemy speed, spawn rate, and aggression
+- Smooth player movement with keyboard, mouse hold, or touch input
+- Half-heart health system with full, half, and empty heart states
+- Enemy ships, asteroids, enemy bullets, explosions, and a boss encounter
+- Coin counter that increments every 2 seconds with an arcade-style pulse animation
+- Pause overlay, game over overlay, restart flow, and lightweight screen transitions
+- Automatic asset-role detection based on filenames like `PlayerShip.png` or `EnemyBullet.png`
 
-## راه‌اندازی (Windows PowerShell)
+## Requirements
+
+- Python 3.10 or newer
+- `pygame` 2.6+
+
+## Run
 
 ```powershell
-py -3 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -e .[dev]
+.\venv\Scripts\python.exe -m game.main
 ```
 
-## اجرا
+Or, after installing the package:
 
 ```powershell
 game
 ```
 
-یا:
+## Controls
+
+- Move: `WASD` or arrow keys
+- Shoot: `Space`
+- Mouse mode: hold left click to steer and shoot toward the pointer
+- Touch mode: hold touch to steer and fire
+- Pause: `Esc`
+- Menus: arrow keys + `Enter`, or mouse/touch
+
+## Tests
 
 ```powershell
-python -m game.main
+.\venv\Scripts\python.exe -m pytest
 ```
 
-## تست و کیفیت کد
-
-```powershell
-pytest
-ruff check .
-```
-
-## ساختار پروژه
+## Project Structure
 
 ```text
 .
-├── pyproject.toml
-├── README.md
-├── src/
-│   └── game/
-│       ├── __init__.py
-│       ├── main.py
-│       └── settings.py
+├── src/game/
+│   ├── assets.py
+│   ├── entities.py
+│   ├── gameplay.py
+│   ├── main.py
+│   ├── settings.py
+│   └── ui.py
 └── tests/
+    ├── conftest.py
     └── test_smoke.py
 ```
-
