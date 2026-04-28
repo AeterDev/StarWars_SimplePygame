@@ -1,0 +1,73 @@
+Metadata-Version: 2.4
+Name: blank-pygame-game
+Version: 0.1.0
+Summary: Retro pixel-art Star Wars inspired arcade shooter built with pygame.
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pygame<3.0,>=2.6
+Provides-Extra: dev
+Requires-Dist: pytest<9.0,>=8.2; extra == "dev"
+Requires-Dist: ruff<1.0,>=0.6; extra == "dev"
+
+# Star Wars Pixel Arcade
+
+A retro 2D pixel-art space shooter built with `pygame` and the image assets already included in this project.
+
+## Features
+
+- Animated start menu with `EASY`, `MEDIUM`, `HARD`, and `EXIT`
+- Difficulty-based enemy speed, spawn rate, and aggression
+- Smooth player movement with keyboard, mouse hold, or touch input
+- Half-heart health system with full, half, and empty heart states
+- Enemy ships, asteroids, enemy bullets, explosions, and a boss encounter
+- Coin counter that increments every 2 seconds with an arcade-style pulse animation
+- Pause overlay, game over overlay, restart flow, and lightweight screen transitions
+- Automatic asset-role detection based on filenames like `PlayerShip.png` or `EnemyBullet.png`
+
+## Requirements
+
+- Python 3.10 or newer
+- `pygame` 2.6+
+
+## Run
+
+```powershell
+.\venv\Scripts\python.exe -m game.main
+```
+
+Or, after installing the package:
+
+```powershell
+game
+```
+
+## Controls
+
+- Move: `WASD` or arrow keys
+- Shoot: `Space`
+- Mouse mode: hold left click to steer and shoot toward the pointer
+- Touch mode: hold touch to steer and fire
+- Pause: `Esc`
+- Menus: arrow keys + `Enter`, or mouse/touch
+
+## Tests
+
+```powershell
+.\venv\Scripts\python.exe -m pytest
+```
+
+## Project Structure
+
+```text
+.
+├── src/game/
+│   ├── assets.py
+│   ├── entities.py
+│   ├── gameplay.py
+│   ├── main.py
+│   ├── settings.py
+│   └── ui.py
+└── tests/
+    ├── conftest.py
+    └── test_smoke.py
+```
